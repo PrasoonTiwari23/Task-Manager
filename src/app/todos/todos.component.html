@@ -1,11 +1,16 @@
 <div class="container">
-    <h1 class="text-center mb-5">Prasoon's Todo List</h1>
-<app-add-todo (todoAdd)="addTodo($event) "></app-add-todo>
-<h4>Your Todos</h4>
-<div *ngIf="this.todos.length==0; else elseblock">Empty Todos :)</div>
-<ng-template #elseblock>
-<div *ngFor="let i of todos;index as flag">
-    <app-todo-item [i]="i" [flag]="flag" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)"></app-todo-item>
-</div>
-</ng-template>
+  <h1 class="text-center mb-5" style="font-family: cursive">TASK MANAGER</h1>
+  <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+  <h4>Your Tasks</h4>
+  <div *ngIf="this.todos.length == 0; else elseblock">Empty Tasks :)</div>
+  <ng-template #elseblock>
+    <div *ngFor="let i of todos; index as flag">
+      <app-todo-item
+        [i]="i"
+        [flag]="flag"
+        (todoDelete)="deleteTodo($event)"
+        (todoCheckbox)="toggleTodo($event)"
+      ></app-todo-item>
+    </div>
+  </ng-template>
 </div>
