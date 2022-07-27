@@ -1,0 +1,15 @@
+<div class="my-3">
+  <h5 [ngClass]="{ strike: !i.active }">{{ i?.title }}</h5>
+  <p>{{ i?.desc }}</p>
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="exampleCheck1"
+      (click)="onCheckboxClick(i)"
+      [checked]="!i.active"
+    />
+    <label class="form-check-label" for="exampleCheck1{{ flag }}">Done</label>
+  </div>
+  <button class="btn btn-sm btn-danger" (click)="onClick(i)">Delete</button>
+</div>
